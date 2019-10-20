@@ -1,0 +1,25 @@
+From eb3d84e9f7b3310304d7c6cf42bbd00812bd7d53 Mon Sep 17 00:00:00 2001
+From: Oleg Kokorin <ole2mail@mail.com>
+Date: Sun, 20 Oct 2019 16:25:54 -0700
+Subject: [PATCH] fix: new GIT api for the upstream setting
+
+---
+ bitbake/lib/bb/fetch2/git.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bitbake/lib/bb/fetch2/git.py b/bitbake/lib/bb/fetch2/git.py
+index 526668bc23..f15d4b7695 100644
+--- a/bitbake/lib/bb/fetch2/git.py
++++ b/bitbake/lib/bb/fetch2/git.py
+@@ -274,7 +274,7 @@ class Git(FetchMethod):
+                 branchname =  ud.branches[ud.names[0]]
+                 runfetchcmd("%s checkout -B %s %s" % (ud.basecmd, branchname, \
+                             ud.revisions[ud.names[0]]), d)
+-                runfetchcmd("%s branch --set-upstream %s origin/%s" % (ud.basecmd, branchname, \
++                runfetchcmd("%s branch --set-upstream-to origin/%s %s" % (ud.basecmd, branchname, \
+                             branchname), d)
+             else:
+                 runfetchcmd("%s checkout %s" % (ud.basecmd, ud.revisions[ud.names[0]]), d)
+-- 
+2.17.1
+
