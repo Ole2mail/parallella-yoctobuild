@@ -6,7 +6,7 @@
 	url = https://github.com/peteasa/meta-epiphany.git
 [submodule "meta-parallella"]
 	path = meta-parallella
-	url = https://github.com/peteasa/meta-parallella
+	url = https://github.com/Ole2mail/meta-parallella
 [submodule "meta-exotic"]
 	path = meta-exotic
 	url = https://github.com/peteasa/meta-exotic.git
